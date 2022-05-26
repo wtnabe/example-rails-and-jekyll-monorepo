@@ -1,0 +1,17 @@
+desc 'server'
+task :serve do
+  sh 'jekyll serve -s src'
+end
+
+desc 'build'
+task :build do
+  sh 'jekyll build -s src'
+end
+
+desc 'clean'
+task :clean do
+  sh 'jekyll clean -s src'
+end
+require 'jekyll/vite'
+ViteRuby.install_tasks
+
