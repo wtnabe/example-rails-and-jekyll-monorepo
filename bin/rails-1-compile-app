@@ -1,0 +1,15 @@
+#! /bin/sh
+
+#
+# Rails アプリケーションとしてコンパイルする
+#
+# local の development 環境と CI 上でたぶん動く
+#
+
+docker run -i --rm -v `pwd`:/workspace mixed-app-builder /bin/bash <<EOD
+cd /workspace/rails
+cp -fr /packages/vendor .
+cp -fr /packages/node_modules .
+bundle config set --local path /workspace/rails/vendor
+bundle exec rails assets:precompile
+EOD

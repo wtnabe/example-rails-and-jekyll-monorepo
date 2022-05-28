@@ -1,0 +1,9 @@
+.env
+*.local
+Dockerfile.web
+db/
+log/
+# log とか巨大なものが入らないように
+tmp/
+vite.config.ts
+yarn.lock

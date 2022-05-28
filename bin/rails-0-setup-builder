@@ -1,0 +1,9 @@
+#! /bin/sh
+
+#
+# アプリケーションをコンパイルする用の docker image を作る
+#
+# local の development 環境か、うまくいけば CI 上でも動くかも
+#
+
+docker build -t mixed-app-builder -f ./dockerfiles/Dockerfile.builder .
