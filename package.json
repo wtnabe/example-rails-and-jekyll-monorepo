@@ -6,6 +6,9 @@
     "rails"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/core": "^17.0.0",
     "@markuplint/erb-parser": "^2.2.1",
     "@markuplint/liquid-parser": "^2.2.1",
     "eslint": "^8.16.0",
