@@ -1,0 +1,13 @@
+{
+  "parser": {
+    "\\.erb$": "@markuplint/erb-parser",
+    "jekyll\\/.*\\.{html|md|markdown}$": "@markuplint/liquid-parser"
+  },
+  "extends": [
+    "markuplint:recommended"
+  ],
+	"excludeFiles": [
+		"**/vendor/**/*",
+		"**/node_modules/**/*"
+	]
+}

@@ -1,5 +1,22 @@
 ## 複数のアプリがミックスした repository でそれぞれを deploy する
 
+### 動かし方
+
+以下で yarn install する。
+
+ * プロジェクトルート
+ * rails
+ * jekyll
+
+これは ViteRuby が yarn workspace に対応していないため。
+
+以下で bundle install する。
+
+ * rails
+ * jekyll
+
+これは bundler に workspace 機能がないため。
+
 ### 目的
 
 一つのリポジトリに以下の3つの仕組みを同居させたい。

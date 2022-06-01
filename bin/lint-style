@@ -1,0 +1,6 @@
+#! /bin/sh
+
+DIR_PREFIX=`dirname $0`
+ROOT=`dirname ${DIR_PREFIX}`
+
+yarn run stylelint $ROOT/frontend/**/*.css $ROOT/frontend/**/*.scss 

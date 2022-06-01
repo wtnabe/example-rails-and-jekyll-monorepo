@@ -1,6 +1,16 @@
 {
-  "devDependencies": {
-    "vite": "^2.9.9",
-    "vite-plugin-ruby": "^3.0.12"
-  }
+	"name": "rails",
+	"version": "1.0.0",
+	"dependencies": {
+		"frontend": "1.0.0"
+	},
+	"devDependencies": {
+		"vite": "^2.9.9",
+		"vite-plugin-ruby": "^3.0.12"
+	},
+	"scripts": {
+		"lint:html": "../bin/lint-html",
+		"lint:script": "../bin/lint-script",
+		"lint:style": "../bin/lint-style"
+	}
 }

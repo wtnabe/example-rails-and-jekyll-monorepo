@@ -1,0 +1,32 @@
+#! /usr/bin/awk -f
+
+BEGIN {
+	filename = ""
+}
+
+/<markuplint> ([^:])+: (.)/ { # filename
+  sub(/\:$/, "", $2)
+  if ($3 == "✓") {
+    filename = ""
+  } else {
+    filename = remove_dir($2)
+  }
+}
+
+/^ +[0-9]+:[0-9]+/ {
+	if (filename) {
+		line = sprintf("%s:%s: ", filename, $1)
+    $1 = ""
+    line = line sprintf("%s ", $0)
+    print line
+  }
+}
+
+#
+# @param {string} filename
+# @return {string}
+#
+function remove_dir(filename) {
+  sub(ENVIRON["PWD"] "/", "", filename)
+  return filename
+}
