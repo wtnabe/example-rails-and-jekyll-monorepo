@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+git status -uno | awk -v msg=$1 '
+BEGIN {
+  not_jekyll = 0
+}
+
+/(new file|modified|deleted):/ {
+  if ($NF !~ /jekyll/ || ($NF ~ /jekyll/ && $NF ~ /frontend/)) {
+    not_jekyll = 1
+  }
+}
+
+END {
+  if (not_jekyll) {
+    exit system("yarn run commitlint --edit " msg)
+  } else {
+    exit 0
+  }
+}
+'
